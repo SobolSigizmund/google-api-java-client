@@ -2,7 +2,7 @@ addons:
   artifacts:
     debug: true
     paths: [libs.zip, build.zip]
-    target_paths: e93895a3-c758-4cf6-a01d-ebe39aca5028
+    target_paths: afbdf3a9-c0a5-4deb-bd33-3ca479b348d5
 android:
   components: [extra-google-google_play_services]
 before_install: ['mvn install:install-file -Dfile=$ANDROID_HOME/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar
@@ -14,4 +14,4 @@ language: android
 notifications: {email: false}
 script: [mvn test -B, ./df-build.sh]
 sudo: false
-# Modified by Insights Service at 2016-03-04 11:47:35.186183
+# Modified by Insights Service at 2016-03-04 14:56:42.042187
