@@ -14,4 +14,4 @@ language: android
 notifications: {email: false}
 script: [mvn test -B, ./df-build.sh]
 sudo: false
-# Modified by Insights Service at 2016-03-07 14:20:56.121570
+# Modified by Insights Service at 2016-03-07 14:28:12.684484
