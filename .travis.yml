@@ -2,7 +2,7 @@ addons:
   artifacts:
     debug: true
     paths: [libs.zip, build.zip, testbuild.zip]
-    target_paths: 92998635-5300-405e-8069-cfa98562c8fe
+    target_paths: 93b226d7-dfc1-4dfd-98ba-7f332ab1e647
 after_success: []
 android:
   components: [extra-google-google_play_services]
@@ -15,4 +15,4 @@ language: android
 notifications: {}
 script: [mvn test -B, ./df-build.sh]
 sudo: false
-# Modified by Insights Service at 2016-03-15 11:56:38.625815
+# Modified by Insights Service at 2016-03-16 15:27:00.844320
