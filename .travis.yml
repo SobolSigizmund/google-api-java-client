@@ -1,20 +1,17 @@
-sudo: false
-language: android
+addons:
+  artifacts:
+    debug: true
+    paths: [libs.zip, build.zip, testbuild.zip]
+    target_paths: 411c500a-d329-44de-ba35-8ec50476ea63
 android:
-  components:
-    - extra-google-google_play_services
-notifications:
-  email: false
-jdk:
-  - oraclejdk8
-  - openjdk7
-  - openjdk6
-before_install:
-  - mvn install:install-file
-     -Dfile=$ANDROID_HOME/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar
-     -DgroupId=com.google.android.google-play-services -DartifactId=google-play-services
-     -Dversion=1 -Dpackaging=jar
-install:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-script:
-  - mvn test -B
+  components: [extra-google-google_play_services]
+before_install: ['mvn install:install-file -Dfile=$ANDROID_HOME/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar
+    -DgroupId=com.google.android.google-play-services -DartifactId=google-play-services
+    -Dversion=1 -Dpackaging=jar']
+install: [mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V]
+jdk: [oraclejdk8, openjdk7, openjdk6]
+language: android
+notifications: {}
+script: [mvn test -B, ./df-build.sh]
+sudo: false
+# Modified by Insights Service at 2016-04-10 19:17:42.876621
